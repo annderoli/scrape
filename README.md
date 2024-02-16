@@ -1,4 +1,4 @@
-# WebScraping 
+# Scrape
 ## Essa é a primeira parte deste projeto que consiste em buscar todos os ativos listados no site de minha corretora de investimentos
 > A segunda parte desse projeto está em meu repositório onde eu efetuo todo o processo de ETL e manipulação dos dados.
 
