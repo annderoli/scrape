@@ -1,6 +1,13 @@
-from flask import Flask
-app = Flask(__name__)
+import requests
+import json
+import pandas as pd
 
-@app.route('/')
-def hello_world():
-    return 'Hello, Docker!'
+url = ''
+
+response = requests.get(url)
+
+data = json.loads(response.text)
+
+df = pd.DataFrame(data['instruments'])
+
+df
