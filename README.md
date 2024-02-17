@@ -19,9 +19,9 @@
 
 O projeto ainda está em desenvolvimento e será criado em duas partes, as próximas atualizações deste serão voltadas nas seguintes tarefas:
 
-- [ ] Acessar o conteudo do site da corretora `<ActivTrades>`
-- [ ] Fazer a busca dos dados em todas as paginas
-- [ ] fazer o tratamento de erro para trazer `<Sigla / Nome do ativo / nivel de alavancagem>`
+- [V] Acessar o conteudo do site da corretora `<ActivTrades>`
+- [V] Fazer a busca dos dados em todas as paginas
+- [V] fazer o tratamento de erro para trazer `<Sigla / Nome do ativo / nivel de alavancagem`
 - [ ] Inserir esses dados no Banco de Dados `<PostgreSQL>`
 
 ## 💻 Pré-requisitos
