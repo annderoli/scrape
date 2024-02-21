@@ -28,6 +28,6 @@ O projeto ainda está em desenvolvimento e será criado em duas partes, as próx
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Versão de `<Python3 3.10.12>`
+- Versão de `<Python3>`
 - Máquina `<Linux / Ubuntu 22.04>`
-- Vamos utilizar as seguintes bibliotecas `<Pandas / Time>`.
+- Vamos utilizar as seguintes bibliotecas `<JSON / Requests / Pandas>`.
