@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import psycopg2
 
+
 # Buscando os dados e inserindo em um Dataframe
 
 url = ''
@@ -15,18 +16,20 @@ df = pd.DataFrame(data['instruments'])
 
 # Conectando com o banco de dados
 
-DB_NAME = "scrap-db"
-DB_USER = "postgres"
-DB_PASS = "123"
-DB_HOST = "localhost"
-DB_PORT = "5432"
+# Parâmetros de conexão
+dbname = 'scrap-db'
+user = 'postgres'
+password = '123'
+host = 'localhost'  # ou o endereço do seu servidor
+port = '5432'  # Porta padrão do PostgreSQL
 
-conn = psycopg2.connect(database=DB_NAME,
-                            user=DB_USER,
-                            password=DB_PASS,
-                            host=DB_HOST,
-                            port=DB_PORT)
-cur = conn.cursor()
+
+conn = psycopg2.connect(dbname=dbname, 
+                        user=user,
+                        password=password, 
+                        host=host, 
+                        port=port)
+
 
 cur.execute("""
     CREATE TABLE Employee(
