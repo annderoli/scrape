@@ -2,6 +2,7 @@ import requests
 import json
 import pandas as pd
 import psycopg2
+from sqlalchemy import create_engine
 
 
 # Buscando os dados e inserindo em um Dataframe
@@ -28,6 +29,26 @@ conn = psycopg2.connect(dbname=dbname, user=user,password=password, host=host, p
 # Criar um cursor
 cur = conn.cursor()
 
+# Nome da tabela no banco de dados
+table_name = 'ativos'
+
+# Montar a query de criação da tabela
+create_table_query = f"""
+CREATE TABLE {table_name} (
+    code VARCHAR(10),
+    name VARCHAR(100),
+    description VARCHAR(100)
+);
+"""
+
+df.to_sql(table_name, conn, if_exists='replace', index=False)
+
+# Executar a query para criar a tabela
+cur.execute(create_table_query)
+conn.commit()
+
+print(f"Tabela '{table_name}' criada com sucesso no banco de dados PostgreSQL.")
+
 # Executar uma consulta
 cur.execute("SELECT * FROM ativos;")
 
@@ -38,6 +59,6 @@ db = cur.fetchall()
 for ativos in db:
     print(ativos)
 
-# Fechar o cursor e a conexão
+# Fechar a conexão com o banco de dados
 cur.close()
 conn.close()
