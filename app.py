@@ -7,11 +7,17 @@ from sqlalchemy import create_engine
 # Buscando os dados e inserindo em um Dataframe
 url = 'https://www.activtrades.com/api/en/get-instruments'
 
+link = 'https://www.activtrades.com/api/en/get-instruments?instrumentType=0&isSpreadSwaps=1&instrument_group=10'
+
 response = requests.get(url)
 
 data = json.loads(response.text)
 
 df = pd.DataFrame(data['instruments'])
+
+filtro = df[df['name'].str.contains('.US')]
+
+filtro
 
 # Conectando com o banco de dados
 dbname = 'annderoli'
