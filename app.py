@@ -18,7 +18,7 @@ df
 
 
 # Conectando com o banco de dados
-dbname = 'scrap_db'
+dbname = 'annderoli'
 user = 'postgres'
 password = '123'
 host = 'localhost' 
@@ -49,15 +49,18 @@ conn.commit()
 
 print(f"Tabela '{table_name}' criada com sucesso no banco de dados PostgreSQL.")
 
-# Executar uma consulta
-cur.execute("SELECT * FROM ativos;")
+    # Executar uma consulta
+    table = cur.execute("CREATE TABLE ativos(code text, name int, description text);")
 
-# Recuperar os resultados
-db = cur.fetchall()
-
-# Exibir os resultados
-for ativos in db:
-    print(ativos)
+    # Executar a consulta com executemany()
+    cur.executemany(table, df)
+    
+    # Recuperar os resultados
+    rows = cur.fetchall()
+    
+    # Exibir os resultados
+    for row in rows:
+        print(row)
 
 # Fechar a conexão com o banco de dados
 cur.close()
