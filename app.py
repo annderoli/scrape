@@ -49,18 +49,18 @@ conn.commit()
 
 print(f"Tabela '{table_name}' criada com sucesso no banco de dados PostgreSQL.")
 
-    # Executar uma consulta
-    table = cur.execute("CREATE TABLE ativos(code text, name int, description text);")
+# Executar uma consulta
+table = cur.execute("CREATE TABLE ativos(code text, name int, description text);")
 
-    # Executar a consulta com executemany()
-    cur.executemany(table, df)
-    
-    # Recuperar os resultados
-    rows = cur.fetchall()
-    
-    # Exibir os resultados
-    for row in rows:
-        print(row)
+# Executar a consulta com executemany()
+cur.executemany(table, df)
+
+# Recuperar os resultados
+rows = cur.fetchall()
+
+# Exibir os resultados
+for row in rows:
+    print(row)
 
 # Fechar a conexão com o banco de dados
 cur.close()
