@@ -22,7 +22,7 @@ O projeto ainda está em desenvolvimento e será criado em duas partes, as próx
 - [x] Acessar o conteudo do site da corretora `<ActivTrades>`
 - [x] Fazer a busca dos dados em todas as paginas
 - [x] fazer o tratamento de erro para trazer `<Sigla / Nome do ativo / nivel de alavancagem`
-- [ ] Inserir esses dados no Banco de Dados `<PostgreSQL>`
+- [x] Inserir esses dados no Banco de Dados `<PostgreSQL>`
 
 ## 💻 Pré-requisitos
 
