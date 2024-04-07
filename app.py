@@ -55,6 +55,7 @@ conn.commit()
 
 # Insere os dados do DataFrame na tabela do PostgreSQL
 engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{dbname}')
+
 df.to_sql(table_name, engine, if_exists='replace', index=False)
 
 # Executar uma consulta
