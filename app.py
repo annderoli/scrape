@@ -30,6 +30,8 @@ for i in range(qtd_pages):
 # Concatena todos os dados sepárados em um unico DataFrame
 df = pd.concat(dfs, ignore_index=True)
 
+df['name'] = df['name'].str.split('.').str[0]
+
 # Remove limite de exibição dos dados
 pd.set_option('display.max_rows', None, 'display.max_columns', None, 'display.max_colwidth', None)
 
