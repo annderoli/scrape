@@ -38,7 +38,7 @@ pd.set_option('display.max_rows', None, 'display.max_columns', None, 'display.ma
 df
 
 # Conectando com o banco de dados
-dbname = 'annderoli'
+dbname = 'scrap_db'
 user = 'postgres'
 password = '123'
 host = 'localhost' 
